@@ -1,5 +1,5 @@
 flask
-git+https://github.com/openai/whisper.git
-torch==2.0.1
-numpy==1.24.4
+whisper
+torch==2.0.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 gunicorn
+numpy<2
