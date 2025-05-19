@@ -1,4 +1,5 @@
 flask
 git+https://github.com/openai/whisper.git
 torch==2.0.1
+numpy<2
 gunicorn
