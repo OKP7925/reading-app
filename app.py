@@ -13,7 +13,7 @@ UPLOAD_FOLDER = "uploads"
 TEXTS_FOLDER = "texts"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-model = whisper.load_model("base")
+model = whisper.load_model("tiny")
 
 # 運営用ホーム画面
 @app.route("/")
