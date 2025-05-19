@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>音読チャレンジ</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .question {
+        white-space: pre-line;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border: 1px solid #000;
+        padding: 10px;
+        margin-top: 20px;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+　　{{ breadcrumbs|safe }}
+    <h1>音読チャレンジ</h1>
+
+    <label for="studentId">あなたの名前や番号を入力してください：</label>
+    <input type="text" id="studentId" required>
+
+    <!-- ボタンを横並びにまとめる -->
+    <div class="button-group">
+        <button id="recordButton">録音開始</button>
+        <button id="stopButton" disabled>録音停止</button>
+        <button id="playButton" disabled>再生</button>
+        <button id="retryButton" disabled>撮り直し</button>
+        <button id="submitButton" disabled>提出</button>
+    </div>
+
+    <audio id="audioPlayer" controls style="display:none;"></audio>
+
+    <div class="question">{{ question }}</div>
+
+    <script src="{{ url_for('static', filename='recorder.js') }}"></script>
+</body>
+</html>
+
